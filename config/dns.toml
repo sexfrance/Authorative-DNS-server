@@ -1,0 +1,36 @@
+# Cybertemp DNS Server Configuration Template
+# Copy this file and customize the values for your setup
+
+# Server Configuration
+bind_address = "0.0.0.0"
+port = 53
+default_ttl = 300
+
+# Domain Settings
+mx_priority = 10
+mail_server = "mail.{domain}"
+nameservers = ["ns1.yourdomain.com", "ns2.yourdomain.com"]
+
+# Verification Settings
+verification_interval_seconds = 3600
+grace_period_hours = 48
+
+# Internal PostgreSQL database (REQUIRED)
+# Replace with your PostgreSQL connection string
+database_url = 'postgresql://username:password@localhost:5432/database_name'
+
+# Supabase configuration (OPTIONAL - for domain sync)
+# Get these from your Supabase project settings
+supabase_url = "https://your-project.supabase.co"
+supabase_key = "your-service-role-key"
+
+# Mail server IP(s)
+mail_server_ips = ["192.168.1.1", "192.168.1.2"]
+
+# HTTP redirect configuration (OPTIONAL)
+http_redirect_enabled = false
+http_redirect_port = 80
+redirect_target = "https://yourdomain.com"
+
+# Auto-discovery
+auto_discovery_enabled = true
